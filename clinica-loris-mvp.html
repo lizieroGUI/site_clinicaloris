@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Lóris - Cuidado médico para toda a família | Caieiras, SP</title>
+<meta name="description" content="Clínica Lóris, em Caieiras-SP: pediatria, clínica geral, geriatria e atendimento multidisciplinar sob a coordenação da Dra. Lorena Fergon. Agende online.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230B1F4A'/%3E%3Cpath d='M24 12v24M12 24h24' stroke='%23C9A24B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Clínica Lóris",
+  "telephone": "+5511965981515",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Manuel C. Gomes, 685 - Jardim Santo Antonio",
+    "addressLocality": "Caieiras",
+    "addressRegion": "SP",
+    "postalCode": "07700-635",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    }
+  ],
+  "medicalSpecialty": ["Pediatric","General Practice","Geriatric"]
+}
+</script>
+<style>
+  :root{
+    --color-navy-950:#102D50;
+    --color-navy-900:#17477D;
+    --color-navy-800:#2C6099;
+    --color-navy-700:#5E84AF;
+    --color-ice:#EAF1F8;
+    --color-gold:#9B650E;
+    --color-gold-bright:#F2B84B;
+    --color-gold-soft:rgba(217,154,43,0.12);
+    --color-cream:#F8FAFC;
+    --color-text:#183653;
+    --color-text-soft:#60758A;
+    --color-whatsapp:#25D366;
+    --color-whatsapp-dark:#1EBE59;
+    --color-white:#FFFFFF;
+    --font-heading:'Outfit', sans-serif;
+    --font-body:'Outfit', sans-serif;
+    --radius-card:16px;
+    --radius-pill:999px;
+    --container:1160px;
+    --section-pad:64px;
+    --shadow-soft:0 24px 52px -28px rgba(16,45,80,0.28);
+  }
+  @media (min-width:860px){
+    :root{ --section-pad:104px; }
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--color-text);
+    background:var(--color-cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; margin:0; padding:0; }
+  h1,h2,h3,h4{ font-family:var(--font-heading); color:var(--color-navy-950); margin:0; line-height:1.15; }
+  p{ margin:0; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  :focus-visible{
+    outline:2.5px solid var(--color-gold);
+    outline-offset:3px;
+  }
+
+  .container{
+    width:100%;
+    max-width:var(--container);
+    margin-inline:auto;
+    padding-inline:24px;
+  }
+  @media (min-width:860px){
+    .container{ padding-inline:40px; }
+  }
+
+  #inicio, #sobre, #especialidades, #especialistas, #diferenciais, #faq, #localizacao, #contato{
+    scroll-margin-top:84px;
+  }
+
+  .section{ padding-block:var(--section-pad); background:var(--color-cream); }
+  .section--mint{ background:#EEF4F9; }
+  .section--cream{ background:var(--color-cream); }
+  .section--accent{ background:#E8F0F8; }
+  .section--dark{
+    background:
+      radial-gradient(120% 140% at 50% -20%, var(--color-navy-800) 0%, var(--color-navy-950) 60%);
+    color:var(--color-white);
+  }
+  .section--dark h2, .section--dark h3{ color:var(--color-white); }
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:40px;
+  }
+  .section-head h2{ font-size:clamp(1.7rem, 1.4rem + 1.4vw, 2.4rem); font-weight:700; letter-spacing:-0.01em; }
+  .section-head p{ margin-top:14px; color:var(--color-text-soft); font-size:1.05rem; }
+  .section--dark .section-head p{ color:var(--color-ice); }
+  .section-head.center{ margin-inline:auto; text-align:center; }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:15px 28px;
+    border-radius:var(--radius-pill);
+    font-weight:600;
+    font-size:0.98rem;
+    border:1.5px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:active{ transform:translateY(1px) scale(.985); }
+  .btn--booking{
+    background:var(--color-navy-900);
+    color:var(--color-white);
+    box-shadow:0 12px 26px -12px rgba(10,43,79,.55);
+  }
+  .btn--booking:hover{ background:var(--color-navy-950); }
+  .btn--whatsapp{
+    background:var(--color-whatsapp);
+    color:#0B3320;
+    box-shadow:0 10px 24px -8px rgba(37,211,102,0.55);
+  }
+  .btn--whatsapp:hover{ background:var(--color-whatsapp-dark); }
+  .btn--outline{
+    background:transparent;
+    border-color:rgba(23,71,125,0.35);
+    color:var(--color-navy-900);
+  }
+  .btn--outline:hover{ background:rgba(23,71,125,0.07); border-color:var(--color-navy-800); }
+  .section--dark .btn--outline{ border-color:rgba(255,255,255,.38); color:var(--color-white); }
+  .btn--sm{ padding:11px 20px; font-size:0.9rem; }
+  .btn--block{ width:100%; }
+  .btn-row{ display:flex; flex-wrap:wrap; gap:14px; }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(255,255,255,0.93);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(23,71,125,0.12);
+  }
+  .site-header .container{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:14px;
+  }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-weight:700; font-size:1.15rem; color:var(--color-navy-950); }
+  .logo-image{ width:104px; height:44px; object-fit:cover; object-position:center; border-radius:8px; }
+
+  .nav-links{
+    display:none;
+    align-items:center;
+    gap:22px;
+    font-size:0.95rem;
+    font-weight:500;
+  }
+  .nav-links a{ color:var(--color-text-soft); transition:color .15s; }
+  .nav-links a:hover{ color:var(--color-navy-900); }
+  .nav-cta{ display:none; }
+  .nav-toggle{
+    display:flex; flex-direction:column; gap:5px;
+    background:none; border:none; padding:8px;
+  }
+  .nav-toggle span{ width:22px; height:2px; background:var(--color-navy-900); border-radius:2px; }
+
+  .mobile-panel{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    padding:8px 24px 20px;
+    border-top:1px solid rgba(23,71,125,0.12);
+    background:var(--color-white);
+  }
+  .mobile-panel.is-open{ display:flex; }
+  .mobile-panel a{ padding:12px 4px; font-weight:500; color:var(--color-text); border-bottom:1px solid rgba(23,71,125,0.1); }
+  .mobile-panel .btn{ margin-top:14px; }
+
+  @media (min-width:860px){
+    .nav-links{ display:flex; }
+    .nav-cta{ display:inline-flex; }
+    .nav-toggle{ display:none; }
+    .mobile-panel{ display:none !important; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(180deg, #FFFFFF 0%, #F1F6FA 100%);
+  }
+  .hero .container{
+    padding-block:64px 56px;
+    display:grid;
+    gap:44px;
+  }
+  @media (min-width:860px){
+    .hero .container{
+      padding-block:72px 64px;
+      gap:48px;
+    }
+  }
+  .hero-copy{ max-width:900px; }
+  .hero-copy h1{
+    font-size:clamp(2.7rem, 1.7rem + 3.7vw, 4.8rem);
+    font-weight:700;
+    letter-spacing:-0.03em;
+    line-height:1;
+    max-width:19ch;
+  }
+  .hero-copy p.lead{
+    margin-top:20px;
+    font-size:1.1rem;
+    color:var(--color-text-soft);
+    max-width:55ch;
+  }
+  .hero-copy .btn-row{ margin-top:32px; }
+
+  .hero-visual{ position:relative; }
+  .hero-photo-wrap{
+    width:100%;
+    aspect-ratio:16 / 6.5;
+    margin:0;
+    position:relative;
+    border-radius:var(--radius-card);
+    border:1px solid rgba(23,71,125,.13);
+    box-shadow:0 26px 60px -42px rgba(16,45,80,.48);
+    overflow:hidden;
+  }
+  .hero-photo{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 53%;
+  }
+  .proof-strip{ border-block:1px solid rgba(23,71,125,.1); background:var(--color-white); }
+  .proof-strip .container{ display:grid; grid-template-columns:1fr; gap:16px; padding-block:22px; }
+  .proof-item{ color:var(--color-text-soft); font-size:.92rem; }
+  .proof-item strong{ display:block; color:var(--color-navy-950); font-size:1rem; }
+  @media (min-width:720px){ .proof-strip .container{ grid-template-columns:repeat(3,1fr); } }
+
+  /* ---------- Sobre ---------- */
+  .about-inner{ display:grid; gap:36px; align-items:center; }
+  .about-copy{ max-width:640px; }
+  .about-inner h2{ font-size:clamp(1.9rem,1.4rem + 1.6vw,2.7rem); }
+  .about-inner p.body-text{ margin-top:22px; color:var(--color-text-soft); font-size:1.06rem; }
+  .about-stats{
+    margin-top:40px;
+    display:grid; gap:12px;
+  }
+  .about-stat{
+    display:flex; align-items:center; gap:10px;
+    border-left:2px solid var(--color-gold);
+    padding:5px 0 5px 16px;
+    font-size:0.94rem; font-weight:500; color:var(--color-text);
+  }
+  .about-inner .btn{ margin-top:30px; }
+  .care-note{ margin:0; justify-self:center; width:min(100%, 360px); background:var(--color-white); border:1px solid rgba(23,71,125,.12); border-radius:var(--radius-card); padding:36px; box-shadow:var(--shadow-soft); }
+  .care-note span{ color:var(--color-gold); font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  .care-note strong{ display:block; margin-top:16px; color:var(--color-navy-950); font-size:1.65rem; line-height:1.15; }
+  .care-note p{ margin-top:16px; color:var(--color-text-soft); }
+  @media (min-width:860px){
+    .about-inner{ grid-template-columns:1.12fr .88fr; }
+    .care-note{ justify-self:end; }
+  }
+
+  /* ---------- Especialidades ---------- */
+  .card-grid{
+    display:grid;
+    gap:20px;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:640px){ .card-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1040px){ .card-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  .spec-card{
+    background:var(--color-white);
+    border:1px solid rgba(23,71,125,0.12);
+    border-radius:var(--radius-card);
+    padding:30px 26px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .spec-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-soft); border-color:rgba(23,71,125,0.28); }
+  .spec-icon{
+    width:52px; height:52px; border-radius:14px;
+    background:var(--color-ice);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--color-navy-800);
+    margin-bottom:18px;
+  }
+  .spec-icon svg{ width:26px; height:26px; }
+  .spec-card h3{ font-size:1.08rem; font-weight:700; color:var(--color-navy-950); }
+  .spec-card p{ margin-top:10px; font-size:0.94rem; color:var(--color-text-soft); }
+
+  .tag-row{
+    margin-top:36px;
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  }
+  .tag-row .tag-label{ font-weight:600; color:var(--color-navy-900); font-size:0.92rem; margin-right:4px; }
+  .tag{
+    background:var(--color-white);
+    border:1px solid rgba(23,71,125,0.14);
+    color:var(--color-text);
+    padding:7px 15px;
+    border-radius:var(--radius-pill);
+    font-size:0.86rem;
+    font-weight:500;
+  }
+  .section-cta{ margin-top:44px; text-align:center; }
+
+  /* ---------- Especialistas ---------- */
+  .team-grid{
+    display:grid;
+    gap:24px;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:860px){ .team-grid{ grid-template-columns:1.15fr 1fr; align-items:stretch; } }
+
+  .team-card{
+    border-radius:var(--radius-card);
+    padding:34px;
+    display:flex; flex-direction:column; gap:16px;
+    box-shadow:var(--shadow-soft);
+  }
+  .team-card--lead{ background:var(--color-white); border:1px solid rgba(23,71,125,0.12); border-left:3px solid var(--color-gold); }
+  .team-card--group{ background:#E5EEF7; border:1px solid rgba(23,71,125,0.1); justify-content:center; box-shadow:none; }
+
+  .doctor-photo-frame{
+    width:100%;
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+    border-radius:12px;
+    background:#E9EDF2;
+  }
+  .doctor-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 10%;
+  }
+
+  .avatar{
+    width:76px; height:76px; border-radius:50%;
+    background:var(--color-gold-bright);
+    color:var(--color-navy-950);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-heading); font-weight:700; font-size:1.3rem;
+    flex-shrink:0;
+  }
+  .avatar--group{ background:transparent; color:var(--color-navy-800); border:2px solid var(--color-navy-700); }
+  .team-name{ font-size:1.2rem; font-weight:700; color:var(--color-navy-950); }
+  .team-role{ font-size:0.85rem; color:var(--color-navy-800); font-weight:600; margin-top:2px; }
+  .team-reg{ font-size:0.8rem; color:var(--color-text-soft); margin-top:2px; }
+  .team-bio{ font-size:0.95rem; color:var(--color-text-soft); }
+  .team-card .btn{ align-self:flex-start; margin-top:6px; }
+
+  /* ---------- Diferenciais ---------- */
+  .diff-list{
+    display:grid;
+    gap:0;
+    grid-template-columns:1fr;
+    border-top:1px solid rgba(23,71,125,0.14);
+  }
+  @media (min-width:860px){ .diff-list{ grid-template-columns:1fr 1fr; } }
+  .diff-item{
+    display:flex; gap:18px;
+    padding:26px 4px;
+    border-bottom:1px solid rgba(23,71,125,0.14);
+  }
+  @media (min-width:860px){
+    .diff-item:nth-child(odd){ border-right:1px solid rgba(23,71,125,0.14); padding-right:28px; }
+    .diff-item:nth-child(even){ padding-left:28px; }
+  }
+  .diff-icon{
+    width:44px; height:44px; border-radius:12px;
+    background:var(--color-ice);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--color-navy-800);
+    flex-shrink:0;
+  }
+  .diff-icon svg{ width:22px; height:22px; }
+  .diff-item h3{ font-size:1.02rem; font-weight:700; color:var(--color-navy-950); }
+  .diff-item p{ margin-top:6px; font-size:0.92rem; color:var(--color-text-soft); }
+
+  .amenities{
+    margin-top:40px;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .amenities .tag{ background:var(--color-white); border-color:rgba(23,71,125,0.14); }
+
+  /* ---------- CTA central ---------- */
+  .cta-central{ text-align:center; }
+  .cta-central .section-head{ margin-inline:auto; }
+  .cta-central .btn{ margin-top:8px; }
+  .cta-central .contact-line{
+    margin-top:26px;
+    font-size:0.92rem;
+    color:var(--color-text-soft);
+  }
+  .cta-central .contact-line a{ color:var(--color-navy-900); text-decoration:underline; text-underline-offset:3px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:760px; }
+  .faq-item{ border-bottom:1px solid rgba(23,71,125,0.14); }
+  .faq-item summary{
+    list-style:none;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:20px;
+    padding:22px 2px;
+    font-family:var(--font-heading);
+    font-weight:600;
+    font-size:1.02rem;
+    color:var(--color-navy-950);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-plus{
+    width:22px; height:22px; flex-shrink:0;
+    position:relative;
+  }
+  .faq-plus::before, .faq-plus::after{
+    content:""; position:absolute; background:var(--color-navy-800);
+    border-radius:2px; top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  .faq-plus::before{ width:14px; height:2px; }
+  .faq-plus::after{ width:2px; height:14px; transition:transform .2s ease; }
+  .faq-item[open] .faq-plus::after{ transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+  .faq-answer{ padding:0 2px 22px; color:var(--color-text-soft); font-size:0.96rem; max-width:64ch; }
+
+  /* ---------- Localização ---------- */
+  .location-grid{ display:grid; gap:28px; align-items:stretch; }
+  .location-copy{ background:var(--color-white); border:1px solid rgba(23,71,125,.12); border-radius:var(--radius-card); padding:32px; box-shadow:var(--shadow-soft); }
+  .location-copy h2{ font-size:clamp(1.8rem,1.4rem + 1.4vw,2.5rem); }
+  .location-copy p{ margin-top:16px; color:var(--color-text-soft); }
+  .location-details{ margin-top:24px; display:grid; gap:10px; color:var(--color-text); }
+  .location-copy .btn{ margin-top:28px; }
+  .map-frame{ min-height:360px; overflow:hidden; border-radius:var(--radius-card); border:1px solid rgba(23,71,125,.12); }
+  .map-frame iframe{ width:100%; height:100%; min-height:360px; border:0; display:block; filter:saturate(.8) contrast(1.05); }
+  @media (min-width:860px){ .location-grid{ grid-template-columns:.78fr 1.22fr; } }
+
+  /* ---------- Footer ---------- */
+  .site-footer{ padding-block:64px 32px; }
+  .footer-grid{
+    display:grid; gap:40px;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:640px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1040px){ .footer-grid{ grid-template-columns:1.3fr 1fr 1fr; } }
+
+  .footer-brand .logo{ color:var(--color-white); }
+  .footer-tagline{ margin-top:14px; font-size:0.92rem; color:var(--color-ice); max-width:32ch; }
+  .social-row{ margin-top:20px; display:flex; gap:12px; }
+  .social-row a{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid rgba(201,162,75,0.35);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .15s, background-color .15s;
+  }
+  .social-row a:hover{ background:var(--color-gold-soft); border-color:var(--color-gold); }
+  .social-row svg{ width:17px; height:17px; }
+
+  .footer-col h4{ color:var(--color-gold-bright); font-size:0.95rem; font-weight:700; margin-bottom:16px; }
+  .footer-col ul{ display:flex; flex-direction:column; gap:11px; }
+  .footer-col li{ font-size:0.92rem; color:var(--color-ice); }
+  .footer-col a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+  .footer-legal{
+    margin-top:52px;
+    padding-top:24px;
+    border-top:1px solid rgba(201,162,75,0.18);
+    display:flex; flex-wrap:wrap; gap:8px 24px;
+    justify-content:space-between;
+    font-size:0.8rem;
+    color:rgba(159,179,217,0.7);
+  }
+
+  /* ---------- WhatsApp flutuante ---------- */
+  .wa-float{
+    position:fixed; right:18px; bottom:18px; z-index:70;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--color-whatsapp);
+    color:#073B25;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(4,16,43,0.55);
+    transition:transform .18s ease;
+  }
+  .wa-float:hover{ transform:scale(1.06); }
+  .wa-float svg{ width:28px; height:28px; }
+
+  .visually-hidden{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap; border:0; padding:0; margin:-1px;
+  }
+  .skip-link{ position:fixed; left:16px; top:10px; z-index:100; transform:translateY(-160%); background:var(--color-gold); color:var(--color-navy-950); padding:10px 16px; border-radius:8px; font-weight:700; }
+  .skip-link:focus{ transform:translateY(0); }
+  .motion-ready{ will-change:transform, opacity; }
+  @media (max-width:640px){
+    .container{ padding-inline:18px; }
+    .hero .container{ padding-block:42px 48px; gap:36px; }
+    .hero-copy h1{ font-size:clamp(2.25rem, 10vw, 3.15rem); max-width:14ch; }
+    .hero-copy p.lead{ font-size:1rem; }
+    .btn-row{ display:grid; }
+    .btn{ width:100%; padding-inline:18px; white-space:normal; text-align:center; }
+    .hero-photo-wrap{ aspect-ratio:4 / 3; }
+    .hero-photo{ object-position:center 53%; }
+    .doctor-photo-frame{ aspect-ratio:4 / 3; }
+    .team-card, .location-copy{ padding:26px 22px; }
+    .wa-float{ width:52px; height:52px; right:14px; bottom:14px; }
+    .site-footer{ padding-bottom:96px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="container">
+    <a href="#inicio" class="logo">
+      <img class="logo-image" src="assets/logo-loris.jpg" width="150" height="150" alt="Clínica Lóris">
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#especialistas">Especialistas</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+
+    <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking btn--sm nav-cta">Agende já</a>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#sobre">Sobre</a>
+    <a href="#especialidades">Especialidades</a>
+    <a href="#especialistas">Especialistas</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking btn--block">Agende já</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- ========== HERO ========== -->
+<section class="hero section--cream" id="inicio">
+  <div class="container">
+    <div class="hero-copy">
+      <h1>Cuidado médico para toda a família.</h1>
+      <p class="lead">Consultas particulares em Caieiras, com escuta atenta e diferentes especialidades no mesmo lugar.</p>
+      <div class="btn-row">
+        <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking">Agende já</a>
+        <a href="#sobre" class="btn btn--outline">Conhecer a clínica</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="hero-photo-wrap">
+        <img class="hero-photo" src="assets/fachada-clinica-loris.jpeg" width="800" height="1067" alt="Fachada da Clínica Lóris em Caieiras" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="proof-strip" aria-label="Informações principais">
+  <div class="container">
+    <div class="proof-item"><strong>Atendimento particular</strong>Recibo para solicitação de reembolso.</div>
+    <div class="proof-item"><strong>De segunda a sexta</strong>Horários das 8h às 19h.</div>
+    <div class="proof-item"><strong>Em Caieiras</strong>Estacionamento próprio e ambiente acessível.</div>
+  </div>
+</section>
+
+<!-- ========== SOBRE ========== -->
+<section class="section section--mint" id="sobre">
+  <div class="container about-inner">
+    <div class="about-copy">
+      <h2>Escuta atenta faz parte do cuidado.</h2>
+      <p class="body-text">A Clínica Lóris atende crianças, adultos e idosos com consultas particulares, acompanhamento preventivo e uma equipe multidisciplinar. Cada atendimento começa entendendo a pessoa, sua rotina e o momento de vida.</p>
+
+      <div class="about-stats">
+        <span class="about-stat">Atendimento particular, com recibo para reembolso</span>
+        <span class="about-stat">Estacionamento próprio</span>
+        <span class="about-stat">Ambiente acolhedor para todas as idades</span>
+      </div>
+
+      <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking">Agende já</a>
+    </div>
+    <aside class="care-note">
+      <span>Nosso princípio</span>
+      <strong>Ouvir antes de orientar.</strong>
+      <p>Consultas com tempo adequado para entender sintomas, rotina e histórico de saúde.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ========== ESPECIALIDADES ========== -->
+<section class="section section--cream" id="especialidades">
+  <div class="container">
+    <div class="section-head">
+      <h2>Cuidado em diferentes fases da vida</h2>
+      <p>Comece pela necessidade da sua família. A recepção indica o profissional e confirma a disponibilidade.</p>
+    </div>
+
+    <div class="card-grid">
+      <article class="spec-card">
+        <div class="spec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="5"/><path d="M8.5 8c.5-1.2 1.8-1.2 2 0M13.5 8c.5-1.2 1.8-1.2 2 0"/><path d="M9.5 12.5c.9.8 2.6.8 3.5 0"/><path d="M9 4.5 8 2M15 4.5 16 2"/><path d="M7 19c1.5-1.6 3.2-2.2 5-2.2s3.5.6 5 2.2"/></svg>
+        </div>
+        <h3>Pediatria</h3>
+        <p>Acompanhamento do desenvolvimento infantil com foco em prevenção, orientação aos pais e carinho.</p>
+      </article>
+
+      <article class="spec-card">
+        <div class="spec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a4 4 0 0 0 8 0V3"/><path d="M10 14v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="12" r="1.6"/></svg>
+        </div>
+        <h3>Clínica Geral</h3>
+        <p>Acompanhamento contínuo, diagnósticos e promoção da saúde do adulto no dia a dia.</p>
+      </article>
+
+      <article class="spec-card">
+        <div class="spec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7-4.2-7-9.8a4.4 4.4 0 0 1 7-3.5 4.4 4.4 0 0 1 7 3.5c0 5.6-7 9.8-7 9.8Z"/><path d="M9 11.5h1.6l1-2 1.4 3.4 1-1.4H16"/></svg>
+        </div>
+        <h3>Geriatria</h3>
+        <p>Longevidade saudável, preservação da autonomia e cuidados focados na qualidade de vida da melhor idade.</p>
+      </article>
+
+      <article class="spec-card">
+        <div class="spec-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c.5-3 2.3-4.6 5-4.6s4.5 1.6 5 4.6"/><path d="M13 19c.5-3 2.3-4.6 5-4.6s4.5 1.6 5 4.6"/></svg>
+        </div>
+        <h3>Atendimento Multidisciplinar</h3>
+        <p>Avaliações integradas para um plano de saúde completo para toda a família.</p>
+      </article>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag-label">Também atendemos:</span>
+      <span class="tag">Ginecologia</span>
+      <span class="tag">Cardiologia</span>
+      <span class="tag">Psicologia</span>
+      <span class="tag">Fisioterapia</span>
+      <span class="tag">Nutrição</span>
+      <span class="tag">Emagrecimento e Suplementação</span>
+      <span class="tag">Exames Laboratoriais</span>
+      <span class="tag">Papanicolau</span>
+      <span class="tag">Prick Test</span>
+    </div>
+
+    <div class="section-cta">
+      <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking">Agende já</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ESPECIALISTAS ========== -->
+<section class="section section--mint" id="especialistas">
+  <div class="container">
+    <div class="section-head">
+      <h2>Quem cuida de você</h2>
+      <p>Coordenação médica e profissionais de diferentes especialidades, com atendimento ético e humanizado.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="team-card team-card--lead">
+        <div class="doctor-photo-frame">
+          <img class="doctor-photo" src="assets/dra-lorena-fergon.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="Dra. Lorena Fergon com troféu e certificado do Prêmio Top of Mind Excelência Brasil 2025">
+        </div>
+        <div>
+          <h3 class="team-name">Dra. Lorena Fergon</h3>
+          <div class="team-role">Responsável Técnica</div>
+          <div class="team-reg">CRM SP [a inserir] - RQE [a inserir]</div>
+        </div>
+        <p class="team-bio">Medicina integrada, escuta ativa e planejamento de saúde preventivo para toda a família.</p>
+        <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking btn--sm">Agende já</a>
+      </article>
+
+      <article class="team-card team-card--group">
+        <div class="avatar avatar--group">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c.5-3.3 2.6-5 6-5s5.5 1.7 6 5"/><path d="M15 15.3c2.4.3 3.7 1.6 4 3.7"/></svg>
+        </div>
+        <div>
+          <h3 class="team-name">Corpo Clínico Especializado</h3>
+          <div class="team-role">Diversas especialidades</div>
+        </div>
+        <p class="team-bio">Profissionais devidamente registrados em seus conselhos de classe, dedicados ao atendimento ético e humanizado.</p>
+        <a href="https://wa.me/5511965981515" target="_blank" rel="noopener" class="btn btn--outline btn--sm js-whatsapp" data-msg="Olá! Gostaria de tirar uma dúvida sobre o atendimento da Clínica Lóris.">Tirar dúvidas</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIFERENCIAIS ========== -->
+<section class="section section--cream" id="diferenciais">
+  <div class="container">
+    <div class="section-head">
+      <h2>Por que Escolher a Clínica Lóris</h2>
+    </div>
+
+    <div class="diff-list">
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.6"/><circle cx="17" cy="7" r="2.6"/><path d="M2.5 18c.5-3.6 2.3-5.4 4.5-5.4s4 1.8 4.5 5.4"/><path d="M12.5 18c.5-3.6 2.3-5.4 4.5-5.4s4 1.8 4.5 5.4"/></svg>
+        </div>
+        <div>
+          <h3>Cuidado Familiar Integrado</h3>
+          <p>Resolução de demandas médicas de diferentes gerações na mesma clínica.</p>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3 6.2"/><path d="M4 18v-4h4"/><path d="M12 8v4l3 2"/></svg>
+        </div>
+        <div>
+          <h3>Agendamento Sem Complicação</h3>
+          <p>Contato direto e rápido via WhatsApp com a recepção.</p>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-5 8 5v10"/><path d="M9 20v-6h6v6"/></svg>
+        </div>
+        <div>
+          <h3>Ambiente Acessível</h3>
+          <p>Instalações planejadas com conforto e segurança para todas as idades.</p>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        </div>
+        <div>
+          <h3>Pontualidade e Acolhimento</h3>
+          <p>Consultas com tempo adequado para escuta e exames.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="amenities">
+      <span class="tag">Estacionamento próprio</span>
+      <span class="tag">Brinquedoteca</span>
+      <span class="tag">Espaço para amamentação</span>
+      <span class="tag">Cafezinho expresso</span>
+      <span class="tag">Acessibilidade total</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA CENTRAL ========== -->
+<section class="section section--accent cta-central">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Sua saúde não precisa esperar.</h2>
+      <p>Acesse a agenda da Clínica Lóris, escolha o atendimento e confira os horários disponíveis.</p>
+    </div>
+    <a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener" class="btn btn--booking">Agende já</a>
+    <p class="contact-line">Precisa de ajuda? <a href="https://wa.me/5511965981515" target="_blank" rel="noopener" class="js-whatsapp" data-msg="Olá! Gostaria de tirar uma dúvida sobre o atendimento da Clínica Lóris.">Fale no WhatsApp</a> ou ligue para <a href="tel:+5511965981515">(11) 96598-1515</a>. Segunda a sexta, das 8h às 19h.</p>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section section--cream" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Como funciona o agendamento?<span class="faq-plus"></span></summary>
+        <p class="faq-answer">Clique em “Agende já” para acessar a página de agendamento. Se precisar de orientação antes de escolher, fale com a recepção pelo WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>A clínica atende convênios médicos?<span class="faq-plus"></span></summary>
+        <p class="faq-answer">Atendemos na modalidade particular e fornecemos recibos e laudos para solicitação de reembolso no seu plano de saúde.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Atendem consultas de urgência?<span class="faq-plus"></span></summary>
+        <p class="faq-answer">Atendemos com foco em consultas agendadas e prevenção. Em emergências, procure um pronto-socorro.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quais documentos devo levar na primeira consulta?<span class="faq-plus"></span></summary>
+        <p class="faq-answer">Documento com foto, exames recentes e lista de medicamentos de uso contínuo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOCALIZAÇÃO ========== -->
+<section class="section section--mint" id="localizacao">
+  <div class="container location-grid">
+    <div class="location-copy">
+      <h2>Clínica Lóris em Caieiras</h2>
+      <p>Chegue com facilidade e conte com estacionamento próprio durante o atendimento.</p>
+      <div class="location-details">
+        <span>Av. Manuel C. Gomes, 685</span>
+        <span>Jardim Santo Antônio, Caieiras - SP</span>
+        <span>CEP 07700-635</span>
+      </div>
+      <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Manuel+C.+Gomes%2C+685+-+Jardim+Santo+Antonio%2C+Caieiras+-+SP%2C+07700-635" target="_blank" rel="noopener">Abrir no Google Maps</a>
+    </div>
+    <div class="map-frame">
+      <iframe
+        title="Mapa com a localização da Clínica Lóris"
+        src="https://www.google.com/maps?q=Av.%20Manuel%20C.%20Gomes%2C%20685%2C%20Caieiras%2C%20SP&amp;output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="section--dark site-footer" id="contato">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <img class="logo-image" src="assets/logo-loris.jpg" width="150" height="150" loading="lazy" decoding="async" alt="Clínica Lóris">
+        </a>
+        <p class="footer-tagline">Saúde integrada para toda a família, da infância à terceira idade.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/clinicaloris/" target="_blank" rel="noopener" aria-label="Instagram da Clínica Lóris">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FBF9F5" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dralorenafergon/" target="_blank" rel="noopener" aria-label="Instagram da Dra. Lorena Fergon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FBF9F5" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Av.+Manuel+C.+Gomes%2C+685+-+Jardim+Santo+Antonio%2C+Caieiras+-+SP%2C+07700-635" target="_blank" rel="noopener">Av. Manuel C. Gomes, 685 - Jardim Santo Antônio, Caieiras/SP</a></li>
+          <li><a href="tel:+5511965981515">(11) 96598-1515</a></li>
+          <li><a href="https://entr.ai/clinicaloris" target="_blank" rel="noopener">Agende já</a></li>
+          <li><a href="https://wa.me/5511965981515" target="_blank" rel="noopener" class="js-whatsapp" data-msg="Olá! Gostaria de tirar uma dúvida sobre o atendimento da Clínica Lóris.">Falar no WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horário de Atendimento</h4>
+        <ul>
+          <li>Segunda a sexta: 8h às 19h</li>
+          <li>Sábado e domingo: fechado</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <span>Responsável Técnica: Dra. Lorena Fergon - CRM/RQE [a inserir]</span>
+      <span>© 2026 Clínica Lóris. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== WHATSAPP FLUTUANTE ========== -->
+<a href="https://wa.me/5511965981515" target="_blank" rel="noopener" class="wa-float js-whatsapp" data-msg="Olá! Gostaria de tirar uma dúvida sobre o atendimento da Clínica Lóris." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 21.5h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.123 6.151 6.562 1.71 12.02 1.71a9.8 9.8 0 0 1 7.005 2.905 9.8 9.8 0 0 1 2.9 7.005c-.003 5.457-4.442 9.88-9.921 9.88m8.416-18.297A11.815 11.815 0 0 0 12.017 0C5.463 0 .128 5.334.125 11.887c0 2.095.547 4.138 1.588 5.938L.025 24l6.317-1.658a11.87 11.87 0 0 0 5.675 1.447h.005c6.553 0 11.88-5.335 11.883-11.893a11.821 11.821 0 0 0-3.485-8.693"/></svg>
+  <span class="visually-hidden">Falar no WhatsApp</span>
+</a>
+
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+  // ---- Configuração central do MVP ----
+  var WHATSAPP_NUMBER = "5511965981515";
+
+  document.querySelectorAll(".js-whatsapp").forEach(function(el){
+    var msg = el.getAttribute("data-msg") || "Olá! Gostaria de agendar uma consulta na Clínica Lóris.";
+    el.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
+  });
+
+  // ---- Menu mobile ----
+  var navToggle = document.getElementById("navToggle");
+  var mobilePanel = document.getElementById("mobilePanel");
+  navToggle.addEventListener("click", function(){
+    var isOpen = mobilePanel.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  });
+  mobilePanel.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", function(){
+      mobilePanel.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Abrir menu");
+    });
+  });
+  document.addEventListener("keydown", function(event){
+    if (event.key === "Escape" && mobilePanel.classList.contains("is-open")) {
+      mobilePanel.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Abrir menu");
+      navToggle.focus();
+    }
+  });
+
+  // ---- Motion com propósito: apresenta a hierarquia inicial sem controlar o scroll ----
+  window.addEventListener("DOMContentLoaded", function(){
+    if (!window.gsap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var animated = document.querySelectorAll(".site-header, .hero-copy > *, .hero-photo-wrap, .proof-item");
+    window.gsap.set(animated, { willChange:"transform, opacity" });
+    var intro = window.gsap.timeline({
+      defaults:{ duration:.62, ease:"power2.out" },
+      onComplete:function(){ window.gsap.set(animated, { clearProps:"willChange" }); }
+    });
+    intro
+      .from(".site-header", { y:-18, autoAlpha:0 })
+      .from(".hero-copy > *", { y:22, autoAlpha:0, stagger:.08 }, "-=.28")
+      .from(".hero-photo-wrap", { y:26, scale:.97, autoAlpha:0 }, "<.08")
+      .from(".proof-item", { y:12, autoAlpha:0, stagger:.07 }, "-=.22");
+  });
+</script>
+</body>
+</html>
